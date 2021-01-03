@@ -1,5 +1,7 @@
 body {
-    color: #777;
+    background-image: url('/assets/img/sakura-background.png');
+    background-repeat: repeat-x;
+    background-position: -10px -80px;
 }
 
 .pure-img-responsive {

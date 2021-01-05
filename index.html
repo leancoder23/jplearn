@@ -11,85 +11,55 @@
     <link rel="alternate" href="/jplearn/feed/feed.xml" type="application/atom+xml" title="Dipti Singh">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
-  <style>
-  body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
-  body {
-    background-image: url(/jplearn/assets/img/sakura-background.png);
-    background-repeat: repeat-x;
-    background-position: -10px -80px;
-}
-
-  .w3-row-padding img {margin-bottom: 12px}
-  /* Set the width of the sidebar to 180px */
-  .w3-sidebar {width: 180px;background: #222;}
-  /* Add a left margin to the "page content" that matches the width of the sidebar (180px) */
-  #main {margin-left: 180px}
-  /* Remove margins from "page content" on small screens TODO add back in*/
-  
-  
-  @media only screen and (max-width:600px) {#main { margin-left:0}}
-  
-  
-  
-  
-  </style>  
-  <body class="w3-black">
-    
-
+  <body class="w3-theme-d4">
       
       
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center w3-theme-d5">
+      <!-- Avatar image in top left corner -->
+      <img src="/jplearn/assets/img/avatar.png" style="width:100%">
+      <br/><br/>
+        <a href="/jplearn/#" class="w3-bar-item w3-button w3-padding-large  w3-hover-theme ">
+          <i class="fa fa-home w3-xxlarge"></i>
+          <p>Home</p>
+        </a>
+        <a href="/jplearn/#about" class="w3-bar-item w3-button w3-padding-large  w3-hover-theme ">
+          <i class="fa fa-user w3-xxlarge"></i>
+          <p>About</p>
+        </a>
+        <a href="/jplearn/#services" class="w3-bar-item w3-button w3-padding-large  w3-hover-theme ">
+          <i class="fa fa-briefcase w3-xxlarge"></i>
+          <p>Services</p>
+        </a>
+        <a href="/jplearn/#contact" class="w3-bar-item w3-button w3-padding-large  w3-hover-theme ">
+          <i class="fa fa-envelope w3-xxlarge"></i>
+          <p>Contact</p>
+        </a>
+    </nav>
       
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="/jplearn/assets/img/avatar.png" style="width:100%">
-    
-    <a href="/jplearn/#" class="w3-bar-item w3-button w3-padding-large  w3-hover-black ">
-      <i class="fa fa-home w3-xxlarge"></i>
-      <p>Home</p>
-    </a>
-    
-    <a href="/jplearn/index2" class="w3-bar-item w3-button w3-padding-large  w3-hover-black ">
-      <i class="fa fa-home w3-xxlarge"></i>
-      <p>Home2</p>
-    </a>
-    
-    <a href="/jplearn/#about" class="w3-bar-item w3-button w3-padding-large  w3-hover-black ">
-      <i class="fa fa-user w3-xxlarge"></i>
-      <p>About</p>
-    </a>
-    
-    <a href="/jplearn/#contact" class="w3-bar-item w3-button w3-padding-large  w3-hover-black ">
-      <i class="fa fa-envelope w3-xxlarge"></i>
-      <p>Contact</p>
-    </a>
-</nav>
-      
-      <!-- Navbar on small screens (Hidden on medium and large screens) -->
-      <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-        <a href="/jplearn/#" class="w3-bar-item w3-button" style="width:20% !important">Home</a>
-        <a href="/jplearn/index2" class="w3-bar-item w3-button" style="width:20% !important">Home2</a>
-        <a href="/jplearn/#about" class="w3-bar-item w3-button" style="width:20% !important">About</a>
-        <a href="/jplearn/#contact" class="w3-bar-item w3-button" style="width:20% !important">Contact</a>
-        </div>
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+      <div class="w3-bar w3-theme-d5 w3-opacity w3-hover-opacity-off w3-center w3-small">
+      <a href="/jplearn/#" class="w3-bar-item w3-button" style="width:20% !important">Home</a>
+      <a href="/jplearn/#about" class="w3-bar-item w3-button" style="width:20% !important">About</a>
+      <a href="/jplearn/#services" class="w3-bar-item w3-button" style="width:20% !important">Services</a>
+      <a href="/jplearn/#contact" class="w3-bar-item w3-button" style="width:20% !important">Contact</a>
       </div>
+    </div>
+
     <div class="w3-padding-large" id="main">
- 
 
-    <main >
-
-      <header class="w3-container w3-padding-32 w3-center" id="home">
+      <main>
+        <header class="w3-container w3-padding-32 w3-center" id="home">
   <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Dipti Singh.</h1>
   <p>A Japanese language interpretator and trainer.</p>
   <img src="/jplearn/assets/img/avatar.png" alt="image" class="w3-image" width="300" height="300">
 </header>
 
-
 <!-- About Section -->
-<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-  <h2 class="w3-text-light-grey">Who am I?</h2>
+<div class="w3-content w3-justify w3-padding-32" id="about">
+  <h2 class="w3-theme-heading-text">About me</h2>
   <hr style="width:200px" class="w3-opacity">
   <p>
     I am working as Japanese language Translator, Interpretator and Trainer since last 5 years.
@@ -105,13 +75,12 @@ also offer online private or group lessons till N2 level, if you are interested 
 enquiries <a href="#contact">here</a>.
   </p>
 
-
-     <!--Work-->
+  <!--Work-->
    <div>
-    <h3 class="w3-padding-16 w3-text-light-grey">Work</h3>
+    <h3 class="w3-padding-16 w3-theme-heading-text">Work</h3>
      <div>
-        <h4 class="w3-text-grey">
-          <i class="fa fa-graduation-cap fa-fw w3-xlarge w3-text-white w3-margin-right"></i>  
+        <h4 class="w3-theme-text">
+          <i class="fa fa-graduation-cap fa-fw w3-xlarge w3-theme-text w3-margin-right"></i>  
           Japanese langauge trainer
         </h4>
         <p>
@@ -119,8 +88,8 @@ enquiries <a href="#contact">here</a>.
         </p>
      </div>
      <div>
-        <h4 class="w3-text-grey">
-          <i class="fa fa-american-sign-language-interpreting fa-fw w3-xlarge w3-text-white w3-margin-right"></i>   
+        <h4 class="w3-theme-text">
+          <i class="fa fa-american-sign-language-interpreting fa-fw w3-xlarge w3-theme-text w3-margin-right"></i>   
           Interpretation
         </h4>
         <p>
@@ -128,7 +97,6 @@ enquiries <a href="#contact">here</a>.
         BridgeStone, Dayanad sagar NITTE, RV College
         </p>
     </div>
-   
 
      <!--End Work-->
   </div>
@@ -136,45 +104,45 @@ enquiries <a href="#contact">here</a>.
   <div class="w3-row">
     <!--Certification-->
     <div class="w3-col l8">
-      <h3 class="w3-padding-16 w3-text-light-grey">Certifications</h3>
+      <h3 class="w3-padding-16 w3-theme-heading-text">Certifications</h3>
           <div>
-            <div class="w3-text-grey">Special diploma in Japanese History and Language</div>
-            <div class="w3-text-dark-grey">Pune university, Maharastra, India</div>
+            <div class="w3-theme-text">Special diploma in Japanese History and Language</div>
+            <div class="w3-theme-subtext">Pune university, Maharastra, India</div>
         </div>
           <div>
-            <div class="w3-text-grey">Advance diploma in Japanese Language</div>
-            <div class="w3-text-dark-grey">Pune university, Maharastra, India</div>
+            <div class="w3-theme-text">Advance diploma in Japanese Language</div>
+            <div class="w3-theme-subtext">Pune university, Maharastra, India</div>
         </div>
           <div>
-            <div class="w3-text-grey">Business Japanese Proficiency Test (BJT)</div>
-            <div class="w3-text-dark-grey">Banglore, India</div>
+            <div class="w3-theme-text">Business Japanese Proficiency Test (BJT)</div>
+            <div class="w3-theme-subtext">Banglore, India</div>
         </div>
           <div>
-            <div class="w3-text-grey">Japanese Language Proficiency Test (JLPT - N2)</div>
-            <div class="w3-text-dark-grey">Japan</div>
+            <div class="w3-theme-text">Japanese Language Proficiency Test (JLPT - N2)</div>
+            <div class="w3-theme-subtext">Japan</div>
         </div>
        <!--End Certification-->
     </div>
     <!--Languages-->
     <div class="w3-col l4">
-      <h3 class="w3-padding-16 w3-text-light-grey">Languages</h3>
+      <h3 class="w3-padding-16 w3-theme-heading-text">Languages</h3>
           <div>
-            <div class="w3-text-grey">Japanese</div>
-            <div class="w3-text-dark-grey">
+            <div class="w3-theme-text">Japanese</div>
+            <div class="w3-theme-subtext">
             Business Proficiency
             
             </div>
         </div>
           <div>
-            <div class="w3-text-grey">English</div>
-            <div class="w3-text-dark-grey">
+            <div class="w3-theme-text">English</div>
+            <div class="w3-theme-subtext">
             Business Proficiency
             
             </div>
         </div>
           <div>
-            <div class="w3-text-grey">Hindi</div>
-            <div class="w3-text-dark-grey">
+            <div class="w3-theme-text">Hindi</div>
+            <div class="w3-theme-subtext">
             Native
             
                 &nbsp;(Sub languages - Marathi, Kannada)
@@ -187,47 +155,71 @@ enquiries <a href="#contact">here</a>.
   </div>
 
 <br/>
-  <button class="w3-button w3-light-grey w3-padding-large w3-section"
+  <button class="w3-button w3-theme-d1 w3-padding-large w3-section"
     onclick="window.open('/jplearn/files/resume.pdf')">
     <i class="fa fa-download"></i> Download Resume
   </button>
 
-
+ <!-- Services -->
+    <div class="w3-padding-16 w3-content" id="services">
+      <h2 class="w3-theme-heading-text">Services</h2>
+      <hr style="width:200px" class="w3-opacity">
+          <div class="w3-theme-text w3-margin-bottom">
+            <i class="fa fa-american-sign-language-interpreting fa-fw w3-xlarge w3-margin-right"></i>
+            Live interpretation during interview, seminar and events 
+         </div>
+          <div class="w3-theme-text w3-margin-bottom">
+            <i class="fa fa-comments fa-fw w3-xlarge w3-margin-right"></i>
+            Teaching private and business people how to communicate effectively 
+         </div>
+          <div class="w3-theme-text w3-margin-bottom">
+            <i class="fa fa-globe fa-fw w3-xlarge w3-margin-right"></i>
+            Teaching in person and online 
+         </div>
+          <div class="w3-theme-text w3-margin-bottom">
+            <i class="fa fa-diamond fa-fw w3-xlarge w3-margin-right"></i>
+            Effective lessons, perfectly adjusted to my clients&#39; needs and wishes 
+         </div>
+          <div class="w3-theme-text w3-margin-bottom">
+            <i class="fa fa-certificate fa-fw w3-xlarge w3-margin-right"></i>
+            Preparation for N3 and N2 certification 
+         </div>
+       <!--End Services-->
+    </div>
 
   <!-- Testimonials -->
     <div>
-      <h3 class="w3-padding-16 w3-text-light-grey">My Reputation</h3>
-          <div class="w3-panel">
-            <p class="w3-large w3-serif">
-              <i class="w3-text-grey">"Diptiさん、3日間、本当にありがとうございました。<br />
+      <h3 class="w3-theme-heading-text">My Reputation</h3>
+          <div>
+            <p>
+              <i class="w3-theme-text">"Diptiさん、3日間、本当にありがとうございました。<br />
 Diptiさんが、とてもソフトな感じの方でしたので、私はくつろいだ気持ちでプレゼンや面接ができました。お疲れ様でした。"</i></p>
-              <p class="w3-text-dark-grey">Client name</p>
+              <p class="w3-theme-subtext">Client name</p>
          </div>
-          <div class="w3-panel">
-            <p class="w3-large w3-serif">
-              <i class="w3-text-grey">"Big thank to Dipti Sensei in helping to grasp the language in a much easier way"</i></p>
-              <p class="w3-text-dark-grey">Student at NILI - Japanese langauge institute</p>
+          <div>
+            <p>
+              <i class="w3-theme-text">"Big thank to Dipti Sensei in helping to grasp the language in a much easier way"</i></p>
+              <p class="w3-theme-subtext">Student at NILI - Japanese langauge institute</p>
          </div>
-       <!--End Languages-->
+       <!--End Testimonials-->
     </div>
   <!-- End About Section -->
 </div>
 
 <!-- Contact Section -->
-<div class="w3-padding-16 w3-content w3-text-grey" id="contact">
-  <h2 class="w3-text-light-grey">Contact Me</h2>
+<div class="w3-padding-16 w3-content" id="contact">
+  <h2 class="w3-theme-heading-text">Contact Me</h2>
   <hr style="width:200px" class="w3-opacity">
-
   <div class="w3-section">
-    <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 
+    <p><i class="fa fa-map-marker fa-fw w3-theme-text w3-xlarge w3-margin-right"></i> 
     Banglore, India
     </p>
-    <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 
+    <p><i class="fa fa-phone fa-fw w3-theme-text w3-xlarge w3-margin-right"></i> 
     <a href="tel:+91 7028470597">  +91 7028470597</a>
     </p>
     <p>
-      <i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> 
-      <a href="mailto: diptishanker63@gmail.com"> diptishanker63@gmail.com</a>
+      <i class="fa fa-envelope fa-fw w3-theme-text w3-xlarge w3-margin-right"> </i> 
+      <a class="w3-hover-text" href="mailto: diptishanker63@gmail.com"> diptishanker63@gmail.com</a>
     </p>
   </div><br>
   <p>Lets get in touch. Send me a message:</p>
@@ -236,29 +228,25 @@ Diptiさんが、とてもソフトな感じの方でしたので、私はくつ
     <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
     <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
     <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-    <p><textarea class="w3-input w3-padding-16" rows="5" placeholder="Message" required name="Message"></textarea> </p>
+    <p><textarea class="w3-input w3-padding-16" rows="5" placeholder="Message" required name="Message"></textarea> </p> 
     <p>
-      <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+      <button class="w3-button w3-theme-d1 w3-padding-large" type="submit">
         <i class="fa fa-paper-plane"></i> SEND MESSAGE
       </button>
     </p>
   </form>
   <!-- End Contact Section -->
 </div>
-    </main>
+      </main>
 
       <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i> 
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
-  </footer>
+      <footer class="w3-content w3-padding-64 w3-text-theme w3-xlarge">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+      <!-- End footer -->
+      </footer>
+    </div>
 
-    <!-- Current page: /jplearn/ -->
   </body>
 </html>

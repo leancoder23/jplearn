@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="alternate" href="/jplearn/feed/feed.xml" type="application/atom+xml" title="Dipti Singh">
     <link rel="stylesheet" href="assets/css/style.css">
-  </head>
+
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+   
+   </head>
 
   <body class="w3-theme-d4">
       
@@ -62,7 +66,6 @@
   <p class="w3-large">A Japanese language interpretator and trainer.</p>
   <img  src="/jplearn/assets/img/avatar.png" alt="image" class="w3-image" width="200" height="200">
 
- 
 </header>
 
 <!-- About Section -->
@@ -228,18 +231,80 @@ Diptiさんが、とてもソフトな感じの方でしたので、私はくつ
   </div><br>
   <p>Lets get in touch. Send me a message:</p>
 
-  <form action="/action_page.php" target="_blank">
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-    <p><textarea class="w3-input w3-padding-16" rows="5" placeholder="Message" required name="Message"></textarea> </p> 
+  <form x-data="contactForm()" method="POST" @submit.prevent="submitData">
+    <!--Form submission message-->
+    <p x-show="message.length>0" 
+    x-text="message" 
+    :class="{'w3-panel w3-padding-16':true, 'w3-green':!hasError,'w3-deep-orange':hasError}"></p>
+
+    <p x-show="loading" class="w3-panel w3-padding-16 w3-theme-d1">Submitting your queries ...</p>
+
+   <!--Form input fields-->
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name" x-model="formData.contactName"></p>
+    <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email" x-model="formData.contactEmail"></p>
+    <p><textarea class="w3-input w3-padding-16" rows="5" placeholder="Message" required name="Message" x-model="formData.message"></textarea> </p> 
     <p>
-      <button class="w3-button w3-theme-d1 w3-padding-large" type="submit">
+      <button class="w3-button w3-theme-d1 w3-padding-large" type="submit" :disabled="loading">
         <i class="fa fa-paper-plane"></i> SEND MESSAGE
       </button>
     </p>
   </form>
-  <!-- End Contact Section -->
+
+  <script>
+    function contactForm() {
+	return {
+		formData: {
+			contactName: '',
+			contactEmail: '',
+			message: ''
+		},
+    message:'',
+    hasError:false,
+    loading:false,
+		submitData() {  
+       this.loading = true;
+       this.message = '';
+       this.hasError=false;
+
+       /*
+      let that = this;
+      setTimeout(function(){
+        console.log('timeout');
+        console.log(JSON.stringify(that.formData));
+        that.loading = false;
+        that.hasError=false;
+        that.message='Done!'
+      },2000);*/
+
+      
+			fetch('https://script.google.com/macros/s/AKfycbzw-ZsvQqSDsUPsqVi2nhUSasMASkIIGr0s6cBaaMVc3qJvkXlyAi6A/exec', {
+				method: 'POST',
+        body: JSON.stringify(this.formData)
+      })
+      .then((response)=>{
+        return response.json();
+      })
+			.then((responseData) => {
+        console.log(responseData);
+        if(responseData.status=='error'){   
+          this.message = responseData.message;
+          this.hasError=true;
+        }else{
+	        this.message = 'Your query has successfully submitted, thank you for contacting'
+        }
+			})
+			.catch((e) => {
+        this.hasError=true;
+				this.message = 'Ooops! Something went wrong!'
+			})
+      .finally(() => {
+        this.loading = false;
+	  });
+		}
+	}
+}
+  </script>
+  <!-- End Contact Sect ion -->
 </div>
       </main>
 

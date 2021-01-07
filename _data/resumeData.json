@@ -1,0 +1,74 @@
+{
+   
+    "languages":[
+        {
+            "name":"Japanese",
+            "level":"Business Proficiency"
+        },
+        {
+            "name":"English",
+            "level":"Business Proficiency"
+        },
+        {
+            "name":"Hindi",
+            "level":"Native",
+            "sublanguages":"Marathi, Kannada"
+            
+        }
+    ],
+    "certifications":[
+        {
+            "name":"Special diploma in Japanese History and Language",
+            "location":"Pune university, Maharastra, India",
+            "year":2018
+        },
+        {
+            "name":"Advance diploma in Japanese Language",
+            "location":"Pune university, Maharastra, India",
+            "year":2017
+        },
+        {
+            "name":"Business Japanese Proficiency Test (BJT)",
+            "location":"Banglore, India",
+            "year":2007
+        },
+        {
+            "name":"Japanese Language Proficiency Test (JLPT - N2)",
+            "location":"Japan",
+            "year":2005
+        }
+    ],
+    "testimonies":[
+        {
+            "desc":"Diptiさん、3日間、本当にありがとうございました。\nDiptiさんが、とてもソフトな感じの方でしたので、私はくつろいだ気持ちでプレゼンや面接ができました。お疲れ様でした。",
+            "givenBy":"Client name"
+        },
+        {
+            "desc": "Big thank to Dipti Sensei in helping to grasp the language in a much easier way",
+            "givenBy":"Student at NILI - Japanese langauge institute"
+        }
+    ],
+    "contact":{
+        "location":"Banglore, India",
+        "phone":"+91 7028470597",
+        "email":"diptishanker63@gmail.com"
+    },
+    "services":[
+        {
+            "icon":"fa-american-sign-language-interpreting",
+            "title":"Live interpretation during interview, seminar and events"
+        },
+        {
+            "icon":"fa-laptop",
+            "title":"Teaching in person and online"
+        },
+        {
+            "icon":"fa-diamond",
+            "title":"Effective lessons, perfectly adjusted to my clients' needs and wishes"
+        },
+        {
+            "icon":"fa-flag",
+            "title":"Preparation for N3 and N2 certification"
+        }
+    ]
+}

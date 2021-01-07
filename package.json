@@ -1,0 +1,19 @@
+{
+  "name": "diptiportfolio",
+  "version": "1.0.0",
+  "description": "Dipti Protfolio",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "publish": "npx @11ty/eleventy --pathprefix='/jplearn/' && npx gh-pages -d _site -r https://github.com/leancoder23/jplearn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "gh-pages": "^3.1.0"
+  }
+}

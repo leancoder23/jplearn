@@ -1,0 +1,224 @@
+---
+layout: base.layout.njk
+fa-icon: 'fa-home'
+eleventyNavigation:
+  key: Home
+  order: 1
+  url: /#
+---
+<header class="w3-container w3-padding-32 w3-center" id="home">
+ <div class="w3-panel w3-content w3-xlarge w3-hide-small w3-theme-heading-text">
+    <i class="fa fa-quote-left fa-fw"></i>
+    Without language, one cannot talk to people and understand them; one cannot share their hopes and aspirations, grasp their history, appreciate their poetry, or savor their songs.
+     <i class="fa fa-quote-right fa-fw w3-xlarge"></i> <br/>
+     <span class="w3-theme-subtext">-Nelson Mandela</span>
+  </div>
+  <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> {{ metadata.title }}.</h1>
+  <p class="w3-large">A Japanese language interpretator and trainer.</p>
+  <img  src="{{ '/assets/img/avatar.png' | url }}" alt="image" class="w3-image" width="200" height="200">
+
+</header>
+
+<!-- About Section -->
+<div class="w3-content w3-justify w3-padding-32" id="about">
+  <h2 class="w3-theme-heading-text">About me</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <p>
+    {%include "_includes/about.njk" %}
+  </p>
+
+  <!--Work-->
+   <div>
+    <h3 class="w3-padding-16 w3-theme-heading-text">Work</h3>
+     <div>
+        <h4 class="w3-theme-text">
+          <i class="fa fa-graduation-cap fa-fw w3-xlarge w3-theme-text w3-margin-right"></i>  
+          Japanese langauge trainer
+        </h4>
+        <p>
+        Currenlty working as part-time freelance trainer at NILI - Japanese langauge institute
+        </p>
+     </div>
+     <div>
+        <h4 class="w3-theme-text">
+          <i class="fa fa-american-sign-language-interpreting fa-fw w3-xlarge w3-theme-text w3-margin-right"></i>   
+          Interpretation
+        </h4>
+        <p>
+        Worked as live interpretator during interviews, presentation and seminar for following companies and institutions<br/>
+        BridgeStone, Dayanad sagar NITTE, RV College
+        </p>
+    </div>
+
+     <!--End Work-->
+  </div>
+
+  <div class="w3-row">
+    <!--Certification-->
+    <div class="w3-col l8">
+      <h3 class="w3-padding-16 w3-theme-heading-text">Certifications</h3>
+      {%- for cert in resumeData.certifications %}
+          <div>
+            <div class="w3-theme-text">{{cert.name}}</div>
+            <div class="w3-theme-subtext">{{cert.location}}</div>
+        </div>
+      {%- endfor %}
+       <!--End Certification-->
+    </div>
+    <!--Languages-->
+    <div class="w3-col l4">
+      <h3 class="w3-padding-16 w3-theme-heading-text">Spoken Languages</h3>
+      {%- for lng in resumeData.languages %}
+          <div>
+            <div class="w3-theme-text">{{lng.name}}</div>
+            <div class="w3-theme-subtext">
+            {{lng.level}}
+            {% if lng.sublanguages and lng.sublanguages.length>0 %}
+                &nbsp;(Sub languages - {{lng.sublanguages}})
+            {% endif %}
+            </div>
+        </div>
+      {%- endfor %}
+       <!--End Languages-->
+    </div>
+     <!--End Certification & Languages-->
+  </div>
+
+<br/>
+  <button class="w3-button w3-theme-d1 w3-padding-large w3-section"
+    onclick="window.open('{{ '/files/resume.pdf' | url}}')">
+    <i class="fa fa-download"></i> Download Resume
+  </button>
+
+ <!-- Services -->
+    <div class="w3-padding-16 w3-content" id="services">
+      <h2 class="w3-theme-heading-text">Services</h2>
+      <hr style="width:200px" class="w3-opacity">
+      {%- for service in resumeData.services %}
+          <div class="w3-theme-text w3-margin-bottom">
+            <i class="fa {{service.icon}} fa-fw w3-xlarge w3-margin-right"></i>
+            {{service.title |escape | nl2br}} 
+         </div>
+      {%- endfor %}
+       <!--End Services-->
+    </div>
+
+  <!-- Testimonials -->
+    <div>
+      <h3 class="w3-theme-heading-text">My Reputation</h3>
+      {%- for quote in resumeData.testimonies %}
+          <div>
+            <p>
+              <i class="w3-theme-text">{{quote.desc |escape | nl2br}}</i></p>
+              <p class="w3-theme-subtext">{{quote.givenBy}}</p>
+         </div>
+      {%- endfor %}
+       <!--End Testimonials-->
+    </div>
+  <!-- End About Section -->
+</div>
+
+<!-- Contact Section -->
+<div class="w3-padding-16 w3-content" id="contact">
+  <h2 class="w3-theme-heading-text">Contact Me</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <div class="w3-section">
+    <p><i class="fa fa-map-marker fa-fw w3-theme-text w3-xlarge w3-margin-right"></i> 
+    {{resumeData.contact.location}}
+    </p>
+    <p><i class="fa fa-phone fa-fw w3-theme-text w3-xlarge w3-margin-right"></i> 
+    <a href="tel:{{resumeData.contact.phone}}">  {{resumeData.contact.phone}}</a>
+    </p>
+    <p>
+      <i class="fa fa-envelope fa-fw w3-theme-text w3-xlarge w3-margin-right"> </i> 
+      <a class="w3-hover-text" href="mailto: {{resumeData.contact.email}}"> {{resumeData.contact.email}}</a>
+    </p>
+  </div><br>
+  <p>Lets get in touch. Send me a message:</p>
+
+  <form x-data="contactForm()" method="POST" @submit.prevent="submitData">
+    <!--Form submission message-->
+    <p x-show="message.length>0" 
+    x-text="message" 
+    :class="{'w3-panel w3-padding-16':true, 'w3-green':!hasError,'w3-deep-orange':hasError}"></p>
+
+    <p x-show="loading" class="w3-panel w3-padding-16 w3-theme-d1">Submitting your queries ...</p>
+
+   <!--Form input fields-->
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name" x-model="formData.contactName"></p>
+    <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email" x-model="formData.contactEmail"></p>
+    <p><textarea class="w3-input w3-padding-16" rows="5" placeholder="Message" required name="Message" x-model="formData.message"></textarea> </p> 
+    <p><div class="g-recaptcha" data-sitekey="6LdpViQaAAAAAO_KNZsBI4x40gfzGK1tNjzY-POy"></div></p>
+    <p>
+      <button class="w3-button w3-theme-d1 w3-padding-large" type="submit" :disabled="loading">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </p>
+  </form>
+
+  <script>
+    function contactForm() {
+	return {
+		formData: {
+			contactName: '',
+			contactEmail: '',
+			message: '',
+      recaptcha:'',
+		},
+    message:'',
+    hasError:false,
+    loading:false,
+		submitData() {  
+       this.loading = true;
+       this.message = '';
+       this.hasError=false;
+
+       /*
+      let that = this;
+      setTimeout(function(){
+        console.log('timeout');
+        console.log(JSON.stringify(that.formData));
+        that.loading = false;
+        that.hasError=false;
+        that.message='Done!'
+      },2000);*/
+      this.formData.recaptcha = grecaptcha.getResponse();
+
+			fetch('https://script.google.com/macros/s/AKfycbzw-ZsvQqSDsUPsqVi2nhUSasMASkIIGr0s6cBaaMVc3qJvkXlyAi6A/exec', {
+				method: 'POST',
+        body: JSON.stringify(this.formData)
+      })
+      .then((response)=>{
+        return response.json();
+      })
+			.then((responseData) => {
+        console.log(responseData);
+        if(responseData.status=='error'){   
+          this.message = responseData.message;
+          this.hasError=true;
+        }else{
+	        this.message = 'Your query has successfully submitted, thank you for contacting'
+          //reset the captcha and form
+          grecaptcha.reset();
+          this.formData = {
+                  contactName: '',
+                  contactEmail: '',
+                  message: '',
+                  recaptcha:'',
+                };
+        }
+			})
+			.catch((e) => {
+        this.hasError=true;
+				this.message = 'Ooops! Something went wrong!'
+			})
+      .finally(() => {
+        this.loading = false;
+      
+	  });
+		}
+	}
+}
+  </script>
+  <!-- End Contact Sect ion -->
+</div>

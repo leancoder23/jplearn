@@ -12,11 +12,6 @@ nav.w3-sidebar {
 /* Add a left margin to the "page content" that matches the width of the nav sidebar (180px) */
 #main {margin-left: 180px}
 
- /* Remove margins from "page content" on small screens TODO add back in*/
- @media only screen and (max-width:600px) {
-     #main { margin-left:0}
- }
-
 
 /* Color theme*/
 .w3-theme-l5 {color:#000 !important; background-color:#f4f5f7 !important}
@@ -46,3 +41,9 @@ nav.w3-sidebar {
 .w3-theme-text {color:#fff !important}
 .w3-theme-subtext {color:#697690 !important}
 .w3-theme-heading-text {color:#00bcd4!important}
+.page-quote-block{font-size: 24px!important;}
+@media only screen and (max-width:600px) {
+    /* Remove margins from "page content" on small screens TODO add back in*/
+    #main { margin-left:0}
+    .page-quote-block{font-size: 10px!important;}
+}

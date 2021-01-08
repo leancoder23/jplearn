@@ -7,13 +7,13 @@ eleventyNavigation:
   url: /#
 ---
 <header class="w3-container w3-padding-32 w3-center" id="home">
- <div class="w3-panel w3-content w3-xlarge w3-hide-small w3-theme-heading-text">
+  <div class="w3-panel w3-content w3-theme-heading-text page-quote-block">
     <i class="fa fa-quote-left fa-fw"></i>
-    Without language, one cannot talk to people and understand them; one cannot share their hopes and aspirations, grasp their history, appreciate their poetry, or savor their songs.
-     <i class="fa fa-quote-right fa-fw w3-xlarge"></i> <br/>
-     <span class="w3-theme-subtext">-Nelson Mandela</span>
+    {{renderData.quote.text}}
+    <i class="fa fa-quote-right fa-fw"></i> <br/>
+    <span class="w3-theme-subtext">-{{renderData.quote.author}}</span>
   </div>
-  <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> {{ metadata.title }}.</h1>
+  <h1 class="w3-xxxlarge"><span class="w3-hide-small">I'm</span> {{ metadata.title }}.</h1>
   <p class="w3-large">A Japanese language interpretator and trainer.</p>
   <img  src="{{ '/assets/img/avatar.png' | url }}" alt="image" class="w3-image" width="200" height="200">
 
@@ -57,7 +57,7 @@ eleventyNavigation:
     <!--Certification-->
     <div class="w3-col l8">
       <h3 class="w3-padding-16 w3-theme-heading-text">Certifications</h3>
-      {%- for cert in resumeData.certifications %}
+      {%- for cert in renderData.certifications %}
           <div>
             <div class="w3-theme-text">{{cert.name}}</div>
             <div class="w3-theme-subtext">{{cert.location}}</div>
@@ -68,7 +68,7 @@ eleventyNavigation:
     <!--Languages-->
     <div class="w3-col l4">
       <h3 class="w3-padding-16 w3-theme-heading-text">Spoken Languages</h3>
-      {%- for lng in resumeData.languages %}
+      {%- for lng in renderData.languages %}
           <div>
             <div class="w3-theme-text">{{lng.name}}</div>
             <div class="w3-theme-subtext">
@@ -94,7 +94,7 @@ eleventyNavigation:
     <div class="w3-padding-16 w3-content" id="services">
       <h2 class="w3-theme-heading-text">Services</h2>
       <hr style="width:200px" class="w3-opacity">
-      {%- for service in resumeData.services %}
+      {%- for service in renderData.services %}
           <div class="w3-theme-text w3-margin-bottom">
             <i class="fa {{service.icon}} fa-fw w3-xlarge w3-margin-right"></i>
             {{service.title |escape | nl2br}} 
@@ -106,7 +106,7 @@ eleventyNavigation:
   <!-- Testimonials -->
     <div>
       <h3 class="w3-theme-heading-text">My Reputation</h3>
-      {%- for quote in resumeData.testimonies %}
+      {%- for quote in renderData.testimonies %}
           <div>
             <p>
               <i class="w3-theme-text">{{quote.desc |escape | nl2br}}</i></p>
@@ -124,14 +124,14 @@ eleventyNavigation:
   <hr style="width:200px" class="w3-opacity">
   <div class="w3-section">
     <p><i class="fa fa-map-marker fa-fw w3-theme-text w3-xlarge w3-margin-right"></i> 
-    {{resumeData.contact.location}}
+    {{renderData.contact.location}}
     </p>
     <p><i class="fa fa-phone fa-fw w3-theme-text w3-xlarge w3-margin-right"></i> 
-    <a href="tel:{{resumeData.contact.phone}}">  {{resumeData.contact.phone}}</a>
+    <a href="tel:{{renderData.contact.phone}}">  {{renderData.contact.phone}}</a>
     </p>
     <p>
       <i class="fa fa-envelope fa-fw w3-theme-text w3-xlarge w3-margin-right"> </i> 
-      <a class="w3-hover-text" href="mailto: {{resumeData.contact.email}}"> {{resumeData.contact.email}}</a>
+      <a class="w3-hover-text" href="mailto: {{renderData.contact.email}}"> {{renderData.contact.email}}</a>
     </p>
   </div><br>
   <p>Lets get in touch. Send me a message:</p>

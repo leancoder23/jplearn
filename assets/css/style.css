@@ -45,5 +45,5 @@ nav.w3-sidebar {
 @media only screen and (max-width:600px) {
     /* Remove margins from "page content" on small screens TODO add back in*/
     #main { margin-left:0}
-    .page-quote-block{font-size: 10px!important;}
+    .page-quote-block{font-size: 12px!important;}
 }

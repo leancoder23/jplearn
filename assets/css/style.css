@@ -42,6 +42,8 @@ nav.w3-sidebar {
 .w3-theme-subtext {color:#697690 !important}
 .w3-theme-heading-text {color:#00bcd4!important}
 .page-quote-block{font-size: 24px!important;}
+
+/* media query */
 @media only screen and (max-width:600px) {
     /* Remove margins from "page content" on small screens TODO add back in*/
     #main { margin-left:0}
